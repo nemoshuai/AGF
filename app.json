@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/start/start",
+    "pages/index/index",
+    "pages/search/search",
+    "pages/movie/movie",
+    "pages/detail/detail",
+    "pages/myCollection/myCollection",
+    "pages/play/play"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#111",
+    "navigationBarTitleText": "动画推荐",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "color": "#4e4e4e",
+    "selectedColor": "#d71f05",
+    "list": [
+      {
+        "selectedIconPath": "/images/dianyingActive.png",
+        "iconPath": "images/dianying.png",
+        "pagePath": "pages/index/index",
+        "text": "新番"
+      },
+      {
+        "selectedIconPath": "/images/juchangActive.png",
+        "iconPath": "images/juchang.png",
+        "pagePath": "pages/movie/movie",
+        "text": "剧场版"
+      },
+      {
+        "selectedIconPath": "/images/wodeActive.png",
+        "iconPath": "images/wode.png",
+        "pagePath": "pages/myCollection/myCollection",
+        "text": "我的"
+      }
+    ]
+  }
+}

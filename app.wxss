@@ -1,0 +1,38 @@
+/**app.wxss**/
+.container {
+  /* height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box; */
+} 
+
+
+/**公共样式**/
+
+.theme-color{
+   color:#d71f05
+}
+
+/**字体颜色**/
+.c-black{color: #111111}
+.c-7b{color: #7b7b7b}
+.c-999{color: #999}
+.c-4e{color: #4e4e4e}
+.c-red{color: red}
+.c-e3{color:#e3e3e3}
+.text-over{overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+.mt-20{margin-top:20rpx}
+.mb-0{margin-bottom: 0}
+
+.loading{
+  text-align: center;
+  padding:10rpx 0;
+}
+.finished{
+  text-align: center;
+  padding:10rpx 0;
+  font-size:30rpx;
+}

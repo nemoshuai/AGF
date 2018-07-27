@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='pageTop'>
+    <view class="userinfo">
+       <block wx:if="{{hasUserInfo}}">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text  class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block> 
+       <button hidden="{{hasUserInfo}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="user-authorization">点击登录</button>
+    </view>
+  </view>
+
+  <view class='filmContainer' wx:if="{{hasUserInfo}}">
+    <anime-view anime-list="{{collectedTVList}}"/>
+  </view>
+</view>

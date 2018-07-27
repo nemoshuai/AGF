@@ -1,0 +1,35 @@
+<!--pages/search/search.wxml-->
+<view class="page">
+    <view class="page__bd">
+      <view class="weui-search-bar">
+          <view class="weui-search-bar__form">
+              <view class="weui-search-bar__box">
+                  <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                  <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" confirm-type="search" bindconfirm="inputConfirm" />
+                  <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                      <icon type="clear" size="14"></icon>
+                  </view>
+              </view>
+              <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                  <icon class="weui-icon-search" type="search" size="14"></icon>
+                  <view class="weui-search-bar__text">搜索</view>
+              </label>
+          </view>
+          <view class="weui-search-bar__cancel-btn cancel-text" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+      </view>
+      <!-- <view class='movie-list'>
+        <view class='movie-item' data="{{item}}" wx:for="{{albumsList}}" wx:key="index" data-id="{{item.id}}" bindtap='bindDetail' hidden='{{albumsList.length==0}}'>
+          <view class='detail'>
+            <image src='{{item.artist.picUrl}}' class='poster'></image>
+            <view class='info'>
+              <text class='c-black detail-name'>{{item.name}}</text>  
+                <text class='c-999'>作者：{{item.artist.name}}</text> 
+                <text class='c-999'>时间：{{item.publishTime}}</text> 
+              <text class='c-999'>收录曲目数：{{item.size}}</text>
+            </view>
+          </view>
+        </view>
+      </view> -->
+      <anime-view anime-list="{{resultList}}"/> 
+    </view>
+</view>

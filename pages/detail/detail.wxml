@@ -1,0 +1,66 @@
+<!--index.wxml-->
+<view class="container" data="{{item}}" wx:for="{{detailList}}" wx:key="index" data-id="{{item.id}}">
+  <view class='page-top' >
+    <view class='page-top-media'style="background-image: url({{item.imageurl}});">
+    </view>
+    <view class='page-top-info'>
+      <view class='media-left'>
+        <view style='width:220rpx; height:308rpx;'>
+          <image src='{{item.imageurl}}' style='width:220rpx; height:308rpx;' mode="{{aspectFit}}" bindtap="showVideo"></image>  
+          <!-- <video src='{{videUrls}}' controls></video> -->
+        </view>
+      </view>
+      <view class="media-content">
+        <!-- <view style='margin-left:300rpx;'> -->
+          <view class='detail-name' style='font-weight: 900; font-size:30rpx; color:#fff'>
+            <text>{{item.name}}</text>
+          </view>
+          <view class='detail-star' style="font-size:30rpx; color:gold;">
+            <block wx:for="{{star}}"  wx:for-item="i" wx:key="index">
+              <image wx:if="{{i==2}}" src="../assets/img/pingfen2.png" style='width: 40rpx; height: 43rpx;'></image>
+              <image wx:if="{{i==1}}" src="../assets/img/pingfen1.png" style='width: 40rpx; height: 43rpx;'></image>
+              <image wx:if="{{i==0}}" src="../assets/img/pingfen0.png" style='width: 40rpx; height: 43rpx;'></image>
+            </block>
+            <text class="star-text">{{item.score}}</text>
+          </view> 
+          <view class='detail-witer c-e3' style='font-size: 24rpx;'>
+            <text>作者：</text>
+            <text>{{item.author}}</text>
+          </view>
+          <view class='detail-time c-e3' style='font-size:24rpx; '>
+            <text>更新时间：</text>
+            <text>{{item.updatetime}}</text>
+          </view>
+          <view class='detail-update c-e3' style='font-size:24rpx;'>
+            <text>更新至：</text>
+            <text>{{item.chapter}}</text>
+          </view>
+          <view class='detail-voice text-over c-e3' style='font-size:24rpx;'>
+            <text>声优：</text>
+            <text>{{item.voice_actor}}</text>
+          </view>
+          <view class='detail-type c-e3' style='font-size:24rpx;'>
+            <text>类型：</text>
+            <text>{{item.type}}</text>
+          </view>
+        <!-- </view> -->
+      </view>
+      <!-- <view class='media-bottom'>
+        <button></button>
+        <text></text>
+      </view> -->
+    </view>
+  </view>
+  <view class='page-mid'>
+    <view class="mid-text {{isFold?'hide':'show'}}" >
+      <text >{{item.introduction}}</text>
+    </view>
+    <view class='mid-img'>
+      <image class='xiala' src="{{isFold?'../assets/img/xiala.png':'../assets/img/shangla.png'}}" bindtap="showAll"></image>
+    </view>
+  </view>
+</view>
+<view class='page-bottom'>
+    <!-- <text>收藏</text> -->
+    <image class="shou" src="{{isCollect?'../assets/img/shou2.png':'../assets/img/shou1.png'}}" bindtap="collect"></image>
+</view>

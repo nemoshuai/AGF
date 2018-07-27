@@ -1,0 +1,21 @@
+<!--components/anime-view/anime-view.wxml-->
+<anime-view>
+  <view class='movie-list'>
+    <view class='movie-item' data="{{item}}" wx:for="{{animeList}}" wx:key="index" data-id="{{item.id}}" bindtap='bindDetail'>
+      <view class='detail'>
+        <!-- <image src='{{item.img}}' class='poster'></image> -->
+        <image src='{{item.imageurl}}' class='poster'></image>
+        <view class='info'>
+          <!-- <text class='c-black detail-name'>{{item.nm}}</text>  -->
+           <text class='c-black detail-name text-over'>{{item.name}}</text>  
+          <!-- <text class='c-999'>作者：堀越耕平</text> -->
+            <text class='c-999'>作者：{{item.author}}</text> 
+          <!-- <text class='c-999'>时间：2018-07-15</text> -->
+            <text class='c-999'>时间：{{item.updatetime}}</text> 
+          <!-- <text class='c-999'>更新至：第45话</text> -->
+           <text class='c-999'>更新至：{{item.chapter}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</anime-view>

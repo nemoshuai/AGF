@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<scroll-view class="container"  scroll-y="true" bindscrolltolower="lower" style="height:{{scrollHeight}}px" scroll-with-animation>
+  <view class='navbar'>
+    <view data="{{item}}" data-idx="{{index}}" wx:for="{{navbarList}}" class="navbar-item c-4e {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">
+      {{item}}
+    </view>
+    <navigator url="/pages/search/search" class='ss-right'>
+      <view class='search-div'>
+          <image class='search-icon' src='../assets/img/sousuo.png '></image>
+      </view>
+    </navigator>
+  </view>
+  <view class='wrapper' hidden='{{currentTab!==0}}'>
+    <swiper 
+    indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="*this">
+          <swiper-item>
+            <navigator url="../detail/detail?id={{item.id}}" class="swiper-item">
+              <image src="{{item.imageurl}}"></image>
+            </navigator>
+          </swiper-item>
+        </block>
+    </swiper>
+  </view>
+
+    <!--新番列表-->
+  <view hidden="{{currentTab!==0}}">
+      <anime-view anime-list="{{newTVList}}"/>  
+  </view>
+  
+  <!--今日更新-->
+  <view hidden="{{currentTab!==1}}" class='mt-20'>
+     <anime-view anime-list="{{whatsNewsList}}"/> 
+  </view>
+  
+  <!--即将上映-->
+  <view hidden="{{currentTab!==2}}" class='mt-20'>
+     <anime-view anime-list="{{comingSoonList}}"/> 
+  </view>
+  <!-- <view class='loading c-999' hidden='{{!loading}}'>正在加载...</view> -->
+  <loading hidden="{{!loading}}">正在加载</loading>
+  <view class='finished c-999' hidden='{{!finished[currentTab]}}'>已经到底了</view>
+</scroll-view>

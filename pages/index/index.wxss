@@ -1,0 +1,35 @@
+/**index.wxss**/
+page{
+  background-color: #f2f2f2;
+}
+.navbar{
+  display: flex;
+  background: #fff;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50rpx 30rpx 50rpx 60rpx;
+}
+
+.navbar .navbar-item{
+  position: relative; 
+  flex: auto;  
+  text-align: center;
+  font-size:32rpx;
+  font-weight: 600;
+  margin-right:50rpx;
+  padding-bottom: 5rpx;
+}
+.active{
+  color: #d71f05;
+  border-bottom: 2px solid #d71f05;
+}
+.search-icon{
+  width: 50rpx;
+  height: 50rpx;
+}
+swiper{
+  height: 300rpx;
+}
+.swiper-item image{
+  width: 100%;
+}

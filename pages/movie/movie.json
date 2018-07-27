@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "anime-view": "/components/anime-view/anime-view"
+  }
+}
